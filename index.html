@@ -86,6 +86,10 @@
   .pillar ul { margin: 0; padding: 0; list-style: none; font-size: 15px; }
   .pillar li { padding: 5px 0 5px 24px; position: relative; }
   .pillar li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 700; }
+  .pillar { display: flex; flex-direction: column; }
+  .pillar p.pain { font-size: 18px; font-style: italic; color: var(--text); }
+  .pillar ul { margin-bottom: 18px; }
+  .pillar p.proof { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--good); font-weight: 600; font-size: 15px; }
 
   /* CASES */
   .case-main { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1fr 1.25fr; }
@@ -255,20 +259,23 @@
       <div class="pillar">
         <div class="ic">📈</div>
         <h3>Mídia que vende</h3>
-        <p>Google e Meta Ads com meta de ROAS e CPA, não de clique.</p>
+        <p class="pain">"Gasto muito e vendo pouco."</p>
         <ul><li>Shopping, Performance Max e catálogo</li><li>Públicos a partir de quem realmente compra</li><li>Testes A/B de criativo e oferta</li></ul>
+        <p class="proof">Lebes: ROAS 8x → 14x</p>
       </div>
       <div class="pillar">
         <div class="ic">🔍</div>
         <h3>Dados em que dá para confiar</h3>
-        <p>Antes de mexer na verba, descubro onde o dinheiro está sendo perdido.</p>
+        <p class="pain">"Não sei de onde vem a venda."</p>
         <ul><li>GA4 e GTM auditados</li><li>Feed e Merchant Center sem erro</li><li>Dashboards em Looker Studio e Power BI</li></ul>
+        <p class="proof">GA4 e feed auditados antes de mexer na verba</p>
       </div>
       <div class="pillar">
         <div class="ic">⚙️</div>
         <h3>Automação que libera o time</h3>
-        <p>O que é repetitivo vira robô; o time fica com o que exige cabeça.</p>
+        <p class="pain">"Meu time vive em planilha."</p>
         <ul><li>Controle de verba e alertas no Slack</li><li>CRM conectado aos anúncios</li><li>Agentes de IA para atendimento</li></ul>
+        <p class="proof">Mais de 10 robôs rodando todo dia</p>
       </div>
     </div>
   </div>
