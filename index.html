@@ -3,257 +3,404 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jonathan Robert · Performance e Automação</title>
-<meta name="description" content="Jonathan Robert: gestor de performance (Google e Meta Ads) e automação para e-commerce. Cases de resultado e automações que economizam tempo do time.">
+<title>Jonathan Robert · Performance e Growth</title>
+<meta name="description" content="Jonathan Robert: gestor de performance e growth para e-commerce. ROAS de 8x para 14x, R$ 1 mi/mês em mídia gerida e automações que economizam horas do time.">
+<meta property="og:title" content="Jonathan Robert · Performance e Growth">
+<meta property="og:description" content="ROAS de 8x para 14x. R$ 148 mil em vendas com R$ 5 mil de mídia. Mídia paga, dados e automação em uma pessoa só.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e;
-    --line: #e7e5e4; --accent: #ea580c; --accent-soft: #fff1e8; --chip: #f5f5f4; --good: #15803d;
+    --bg: #fbfaf8; --surface: #ffffff; --text: #16130f; --muted: #5c564f; --line: #ebe7e1;
+    --accent: #ea580c; --accent-2: #f97316; --accent-soft: #fff3ea; --good: #15803d;
+    --hero-bg: #120f0c; --hero-text: #faf7f2; --hero-muted: #b5ada3; --hero-line: #2b2520;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
-      --line: #292524; --accent: #fb923c; --accent-soft: #2a1a10; --chip: #292524; --good: #4ade80; }
+    :root { --bg: #0e0c0a; --surface: #1a1714; --text: #f5f1ea; --muted: #a8a097; --line: #2a2520;
+      --accent: #fb923c; --accent-2: #fdba74; --accent-soft: #261810; --good: #4ade80;
+      --hero-bg: #070605; --hero-line: #221d19; }
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); color: var(--text);
-    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
-  nav { display: flex; gap: 20px; padding: 20px 0; font-size: 15px; flex-wrap: wrap; }
-  nav a { color: var(--muted); text-decoration: none; }
-  nav a:hover { color: var(--accent); }
-  nav .me { color: var(--text); font-weight: 700; margin-right: auto; }
-  header { padding: 48px 0 32px; }
-  .tag { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
-  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 12px 0 16px; letter-spacing: -.02em; }
-  .lead { color: var(--muted); font-size: 19px; max-width: 680px; margin: 0; }
-  .links { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; }
+    font: 17px/1.6 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
   .btn.primary { background: var(--accent); color: #fff; }
-  .btn.ghost { border: 1px solid var(--line); color: var(--text); }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0 72px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
-  .stat b { display: block; font-size: 30px; line-height: 1.2; color: var(--accent); }
-  .stat span { color: var(--muted); font-size: 14px; }
-  section { margin-bottom: 72px; }
-  h2 { font-size: 28px; margin: 0 0 6px; letter-spacing: -.01em; }
-  .intro { color: var(--muted); margin: 0 0 24px; max-width: 640px; }
+  .btn.primary:hover { background: var(--accent-2); }
+  .btn.ghost { border: 1px solid currentColor; opacity: .9; }
+  .eyebrow { color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.15; letter-spacing: -.02em; margin: 10px 0 14px; }
+  .intro { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 0 36px; }
+  section { padding: 88px 0; }
 
-  /* Case principal */
-  .case { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; margin-bottom: 16px; }
-  .case-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: baseline; }
-  .case h3 { font-size: 24px; margin: 0; }
-  .case .meta { color: var(--muted); font-size: 14px; }
-  .case .big { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
-  .case .big div { background: var(--accent-soft); border-radius: 10px; padding: 14px; }
-  .case .big b { font-size: 26px; display: block; }
-  .case .big span { font-size: 13px; color: var(--muted); }
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px; }
-  .steps h4 { margin: 0 0 4px; font-size: 15px; }
-  .steps p { margin: 0; color: var(--muted); font-size: 15px; }
-  .case a.more { display: inline-block; margin-top: 20px; color: var(--accent); font-weight: 600; text-decoration: none; }
+  /* HERO */
+  .hero { background: var(--hero-bg); color: var(--hero-text); padding: 0 0 72px; }
+  nav { display: flex; align-items: center; gap: 24px; padding: 22px 0; font-size: 15px; flex-wrap: wrap; }
+  nav .logo { font-weight: 800; margin-right: auto; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  nav .logo span { width: 34px; height: 34px; border-radius: 9px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 14px; }
+  nav a.l { color: var(--hero-muted); text-decoration: none; }
+  nav a.l:hover { color: var(--hero-text); }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; padding-top: 56px; }
+  .hero h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.05; letter-spacing: -.03em; margin: 16px 0 20px; font-weight: 800; }
+  .hero h1 em { font-style: normal; color: var(--accent-2); }
+  .hero p.lead { color: var(--hero-muted); font-size: 19px; margin: 0 0 32px; max-width: 560px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .avail { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--hero-muted); border: 1px solid var(--hero-line); border-radius: 999px; padding: 6px 14px; }
+  .avail i { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34,197,94,.2); }
+  .proof-card { background: #1d1915; border: 1px solid var(--hero-line); border-radius: 18px; padding: 26px; }
+  .proof-card .label { font-size: 13px; color: var(--hero-muted); text-transform: uppercase; letter-spacing: .06em; }
+  .roas { display: flex; align-items: flex-end; gap: 14px; margin: 18px 0 8px; height: 150px; }
+  .roas .bar { flex: 1; border-radius: 8px 8px 0 0; background: #3a322b; position: relative; display: flex; justify-content: center; }
+  .roas .bar.hi { background: linear-gradient(180deg, var(--accent-2), var(--accent)); }
+  .roas .bar b { position: absolute; top: -26px; font-size: 18px; }
+  .roas-legend { display: flex; gap: 14px; font-size: 12px; color: var(--hero-muted); }
+  .roas-legend span { flex: 1; text-align: center; }
+  .proof-card .foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--hero-line); font-size: 15px; color: var(--hero-muted); }
+  .proof-card .foot b { color: var(--hero-text); }
+  .logos { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--hero-line); display: flex; align-items: center; gap: 12px 36px; flex-wrap: wrap; color: var(--hero-muted); }
+  .logos small { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; width: 100%; }
+  .logos b { font-size: 20px; font-weight: 700; color: #d9d2c8; letter-spacing: -.01em; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; }
-  .card .kind { font-size: 13px; color: var(--accent); font-weight: 600; }
-  .card h3 { margin: 6px 0 10px; font-size: 19px; line-height: 1.3; }
-  .card .num { font-size: 22px; font-weight: 700; color: var(--good); margin: 0 0 8px; }
-  .card p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
-  .card p b { color: var(--text); font-weight: 600; }
-  .card .gain { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: 15px; }
-  .card .gain::before { content: "Ganho: "; font-weight: 700; color: var(--good); }
-  .card a.tech { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  /* NÚMEROS */
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: -40px; position: relative; }
+  .numbers div { background: var(--surface); padding: 26px 22px; }
+  .numbers b { display: block; font-size: 34px; font-weight: 800; letter-spacing: -.02em; color: var(--accent); line-height: 1.1; }
+  .numbers span { font-size: 15px; color: var(--muted); }
 
-  .timeline { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--line); }
-  .timeline li { position: relative; padding: 0 0 22px 22px; }
-  .timeline li::before { content: ""; position: absolute; left: -7px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
-  .timeline b { display: block; }
+  /* PILARES */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+  .pillar .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; font-size: 22px; margin-bottom: 16px; }
+  .pillar h3 { margin: 0 0 8px; font-size: 21px; }
+  .pillar p { margin: 0 0 14px; color: var(--muted); }
+  .pillar ul { margin: 0; padding: 0; list-style: none; font-size: 15px; }
+  .pillar li { padding: 5px 0 5px 24px; position: relative; }
+  .pillar li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 700; }
+
+  /* CASES */
+  .case-main { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1fr 1.25fr; }
+  .case-side { background: var(--accent-soft); padding: 36px; display: flex; flex-direction: column; }
+  .case-side .who { font-size: 14px; color: var(--muted); }
+  .case-side h3 { font-size: 30px; margin: 6px 0 4px; letter-spacing: -.02em; }
+  .case-side .big { font-size: 64px; font-weight: 800; letter-spacing: -.04em; color: var(--accent); line-height: 1; margin: 28px 0 6px; }
+  .case-side .big-l { color: var(--muted); }
+  .case-side .mini { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; padding-top: 28px; }
+  .case-side .mini b { display: block; font-size: 22px; }
+  .case-side .mini span { font-size: 13px; color: var(--muted); }
+  .case-body { padding: 36px; }
+  .step { display: grid; grid-template-columns: 36px 1fr; gap: 14px; margin-bottom: 22px; }
+  .step .n { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); font-weight: 700; display: grid; place-items: center; }
+  .step h4 { margin: 4px 0 4px; font-size: 17px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+  .step .res { color: var(--good); font-weight: 600; font-size: 14px; }
+  .case-body a.more { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .cases-small { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+  .cs { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .cs .who { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .cs .k { font-size: 40px; font-weight: 800; letter-spacing: -.03em; color: var(--accent); margin: 10px 0 2px; line-height: 1.1; }
+  .cs .kl { font-weight: 600; margin-bottom: 10px; }
+  .cs p { color: var(--muted); font-size: 15px; margin: 0; }
+
+  /* AUTOMAÇÕES */
+  .auto-band { background: var(--hero-bg); color: var(--hero-text); }
+  .auto-band .intro { color: var(--hero-muted); }
+  .autos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .auto { background: #1d1915; border: 1px solid var(--hero-line); border-radius: 16px; padding: 24px; }
+  .auto h3 { margin: 0 0 10px; font-size: 19px; }
+  .auto .row { display: grid; grid-template-columns: 82px 1fr; gap: 8px; font-size: 15px; margin-bottom: 6px; }
+  .auto .row span { color: var(--hero-muted); }
+  .auto .row.g span { color: #4ade80; font-weight: 600; }
+  .auto a { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--hero-muted); }
+
+  /* POR QUE */
+  .why { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 48px; }
+  .why div { border-top: 2px solid var(--accent); padding-top: 16px; }
+  .why h3 { margin: 0 0 6px; font-size: 19px; }
+  .why p { margin: 0; color: var(--muted); }
+
+  /* COMO TRABALHO */
+  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: p; }
+  .process div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; counter-increment: p; }
+  .process div::before { content: "0" counter(p); font-weight: 800; color: var(--accent); font-size: 14px; }
+  .process h3 { margin: 6px 0 6px; font-size: 18px; }
+  .process p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* TRAJETÓRIA */
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .timeline .when { color: var(--muted); font-size: 15px; }
+  .timeline b { display: block; font-size: 17px; }
   .timeline span { color: var(--muted); font-size: 15px; }
-  .tools { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { background: var(--chip); border-radius: 999px; padding: 4px 12px; font-size: 14px; color: var(--muted); }
-  .contact { background: var(--accent-soft); border-radius: 16px; padding: 32px; text-align: center; }
-  .contact p { color: var(--muted); margin: 0 0 20px; }
-  .contact .links { justify-content: center; margin: 0; }
-  footer { padding: 24px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .chip { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; font-size: 14px; color: var(--muted); }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, var(--accent), #c2410c); color: #fff; border-radius: 24px; padding: 56px 32px; text-align: center; }
+  .cta h2 { margin-top: 0; }
+  .cta p { opacity: .9; font-size: 18px; max-width: 560px; margin: 0 auto 28px; }
+  .cta .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta .btn.primary { background: #fff; color: #9a3412; }
+  .cta .btn.ghost { color: #fff; }
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
+
+  @media (max-width: 860px) {
+    .hero-grid, .case-main { grid-template-columns: 1fr; }
+    .numbers { grid-template-columns: repeat(2, 1fr); }
+    .pillars, .cases-small, .autos, .why { grid-template-columns: 1fr; }
+    .process { grid-template-columns: repeat(2, 1fr); }
+    nav a.l { display: none; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 520px) {
+    .process { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+    .case-side, .case-body { padding: 24px; }
+    .case-side .big { font-size: 52px; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <nav>
-    <a class="me" href="#">Jonathan Robert</a>
-    <a href="#cases">Cases</a>
-    <a href="#automacoes">Automações</a>
-    <a href="#trajetoria">Trajetória</a>
-    <a href="#contato">Contato</a>
-  </nav>
 
-  <header>
-    <div class="tag">Performance · Growth · Automação</div>
-    <h1>Faço anúncios venderem mais e tiro o trabalho repetitivo do time.</h1>
-    <p class="lead">Sou gestor de mídia paga (Google e Meta Ads) há mais de 5 anos, focado em e-commerce. Além de cuidar das campanhas, crio automações que vigiam a verba, avisam quando algo dá errado e entregam relatórios prontos, para o time gastar tempo com o que importa.</p>
-    <div class="links">
-      <a class="btn primary" href="#cases">Ver resultados</a>
-      <a class="btn ghost" href="https://linkedin.com/in/jonathan-robert-71878a221">LinkedIn</a>
-      <a class="btn ghost" href="mailto:jonathanrobertsilveira@gmail.com">E-mail</a>
+<div class="hero">
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#"><span>JR</span>Jonathan Robert</a>
+      <a class="l" href="#resultados">Resultados</a>
+      <a class="l" href="#automacoes">Automações</a>
+      <a class="l" href="#trajetoria">Trajetória</a>
+      <a class="btn primary" href="#contato" style="padding:9px 16px;font-size:15px">Falar comigo</a>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <span class="avail"><i></i>Aberto a novas oportunidades · Brasil, Portugal e remoto</span>
+        <h1>Mídia paga que dá <em>lucro</em>, não só clique.</h1>
+        <p class="lead">Sou gestor de performance e growth para e-commerce. Junto estratégia de Google e Meta Ads, leitura de dados e automação para transformar verba em venda, e para o time parar de perder tempo com trabalho manual.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#contato">Vamos conversar →</a>
+          <a class="btn ghost" href="#resultados">Ver resultados</a>
+        </div>
+      </div>
+      <div class="proof-card" aria-label="Evolução do ROAS no case Lebes">
+        <div class="label">ROAS do e-commerce · varejista nacional</div>
+        <div class="roas">
+          <div class="bar" style="height:57%"><b>8x</b></div>
+          <div class="bar" style="height:71%"><b>10x</b></div>
+          <div class="bar hi" style="height:100%"><b>14x</b></div>
+        </div>
+        <div class="roas-legend"><span>Quando assumi</span><span>Catálogo + público</span><span>Teste A/B criativo</span></div>
+        <div class="foot"><b>+75% de retorno</b> sobre R$ 110 mil/mês de mídia, acima da meta de 10x.</div>
+      </div>
     </div>
-  </header>
 
-  <div class="stats">
-    <div class="stat"><b>8x → 14x</b><span>ROAS de e-commerce em varejista nacional</span></div>
-    <div class="stat"><b>R$ 1 mi/mês</b><span>maior volume de verba que já geri</span></div>
-    <div class="stat"><b>45 clientes</b><span>atendidos pelo time de 5 pessoas que liderei</span></div>
-    <div class="stat"><b>10+</b><span>automações rodando sozinhas todo dia</span></div>
+    <div class="logos">
+      <small>Marcas que já passaram pela minha gestão</small>
+      <b>Lebes</b><b>Duloren</b><b>Bana Bana</b><b>Jacuzzi</b><b>V4 Company</b>
+    </div>
   </div>
+</div>
 
-  <!-- CASES -->
-  <section id="cases">
-    <h2>Cases de resultado</h2>
-    <p class="intro">O que mudou nas contas que eu assumi.</p>
+<div class="wrap">
+  <div class="numbers">
+    <div><b>5+ anos</b><span>em mídia paga e growth</span></div>
+    <div><b>R$ 1 mi/mês</b><span>maior verba que já geri</span></div>
+    <div><b>45 clientes</b><span>no time de 5 pessoas que liderei</span></div>
+    <div><b>4 promoções</b><span>em 3 anos, de analista a head</span></div>
+  </div>
+</div>
 
-    <article class="case">
-      <div class="case-head">
-        <h3>Lebes · rede de varejo</h3>
-        <span class="meta">E-commerce + lojas físicas · R$ 110 mil/mês · Meta e Google Ads</span>
+<section id="servicos">
+  <div class="wrap">
+    <span class="eyebrow">O que eu entrego</span>
+    <h2>Três coisas que normalmente exigem três profissionais.</h2>
+    <p class="intro">Gestor de tráfego, analista de dados e quem automatiza processos, em uma pessoa só. Isso encurta o caminho entre descobrir um problema e resolver.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ic">📈</div>
+        <h3>Mídia que vende</h3>
+        <p>Google e Meta Ads com meta de ROAS e CPA, não de clique.</p>
+        <ul><li>Shopping, Performance Max e catálogo</li><li>Públicos a partir de quem realmente compra</li><li>Testes A/B de criativo e oferta</li></ul>
       </div>
-      <div class="big">
-        <div><b>8x</b><span>ROAS quando assumi</span></div>
-        <div><b>10x</b><span>meta batida</span></div>
-        <div><b>14x</b><span>maior resultado da conta</span></div>
-        <div><b>20 mi</b><span>impressões nas lojas físicas</span></div>
+      <div class="pillar">
+        <div class="ic">🔍</div>
+        <h3>Dados em que dá para confiar</h3>
+        <p>Antes de mexer na verba, descubro onde o dinheiro está sendo perdido.</p>
+        <ul><li>GA4 e GTM auditados</li><li>Feed e Merchant Center sem erro</li><li>Dashboards em Looker Studio e Power BI</li></ul>
       </div>
-      <div class="steps">
-        <div><h4>1. Achei quem realmente comprava</h4><p>Os dados do GA4 mostraram que quem comprava tinha 30+ anos. A verba ia para o público 18+, que não convertia. Ajustei e o desperdício caiu na hora.</p></div>
-        <div><h4>2. Coloquei o catálogo nos anúncios</h4><p>Integrei os produtos do site ao Google e ao Meta, separados por categoria, com campanhas para quem nunca visitou e para quem já visitou. O ROAS foi de 8x para 10x.</p></div>
-        <div><h4>3. Testei a mensagem certa</h4><p>"10x sem juros" já funcionava nos anúncios estáticos. Pedi uma moldura com essa frase nos produtos do catálogo e testei em A/B. O ROAS foi de 10x para 14x.</p></div>
-        <div><h4>4. Automatizei o controle de verba</h4><p>As campanhas das lojas chegavam de última hora. Criei um robô que confere todo dia quanto já foi gasto e quanto sobra, e avisa no Slack. Acabou o risco de estourar o orçamento.</p></div>
+      <div class="pillar">
+        <div class="ic">⚙️</div>
+        <h3>Automação que libera o time</h3>
+        <p>O que é repetitivo vira robô; o time fica com o que exige cabeça.</p>
+        <ul><li>Controle de verba e alertas no Slack</li><li>CRM conectado aos anúncios</li><li>Agentes de IA para atendimento</li></ul>
       </div>
-      <a class="more" href="cases/case-lebes.pdf">Ver case completo com dashboards (PDF) →</a>
+    </div>
+  </div>
+</section>
+
+<section id="resultados" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Resultados</span>
+    <h2>O que mudou nas contas que eu assumi.</h2>
+    <p class="intro">Números reais, com o caminho que levou até eles.</p>
+
+    <article class="case-main">
+      <div class="case-side">
+        <span class="who">Rede de varejo · e-commerce + lojas físicas</span>
+        <h3>Lebes</h3>
+        <span class="who">R$ 110 mil/mês · Meta e Google Ads</span>
+        <div class="big">14x</div>
+        <div class="big-l">ROAS, partindo de 8x</div>
+        <div class="mini">
+          <div><b>+75%</b><span>de retorno sobre a mídia</span></div>
+          <div><b>20 mi</b><span>impressões nas lojas físicas, meta batida</span></div>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="step"><div class="n">1</div><div><h4>Descobri quem realmente comprava</h4><p>O GA4 mostrou que quem comprava tinha 30+ anos, mas a verba ia para o público 18+.</p><span class="res">Desperdício cortado na hora</span></div></div>
+        <div class="step"><div class="n">2</div><div><h4>Coloquei o catálogo para vender</h4><p>Produtos do site integrados ao Google e ao Meta, separados por categoria, para quem nunca visitou e para quem já visitou.</p><span class="res">ROAS 8x → 10x, meta atingida</span></div></div>
+        <div class="step"><div class="n">3</div><div><h4>Testei a mensagem certa</h4><p>"10x sem juros" já funcionava em anúncios simples. Levei a frase para os produtos do catálogo e testei em A/B.</p><span class="res">ROAS 10x → 14x, maior resultado da conta</span></div></div>
+        <div class="step"><div class="n">4</div><div><h4>Automatizei o controle de verba</h4><p>Um robô confere todo dia quanto foi gasto e quanto sobra, e avisa no Slack.</p><span class="res">Fim do risco de estourar o orçamento</span></div></div>
+        <a class="more" href="cases/case-lebes.pdf">Ver o case completo com dashboards (PDF) →</a>
+      </div>
     </article>
 
-    <div class="grid">
-      <div class="card">
-        <span class="kind">E-commerce de móveis</span>
-        <h3>R$ 148 mil em vendas com R$ 5 mil de anúncio</h3>
-        <p class="num">ROAS 31x no Google · 22x no Meta</p>
-        <p>Organizei Shopping e Performance Max em torno dos produtos com mais intenção de compra e concentrei a verba onde o retorno era maior.</p>
+    <div class="cases-small">
+      <div class="cs">
+        <span class="who">E-commerce de móveis</span>
+        <div class="k">29x</div>
+        <div class="kl">R$ 148 mil em vendas com R$ 5 mil de mídia</div>
+        <p>ROAS de 31x no Google e 22x no Meta, com Shopping e Performance Max focados nos produtos de maior intenção de compra.</p>
       </div>
-      <div class="card">
-        <span class="kind">E-commerce regional</span>
-        <h3>Venda com custo controlado</h3>
-        <p class="num">ROAS 4,9x · R$ 37 por venda</p>
-        <p>Achei falhas no cadastro dos produtos no Google que travavam o Shopping. Depois de corrigir, a Performance Max puxou o resultado.</p>
+      <div class="cs">
+        <span class="who">E-commerce regional</span>
+        <div class="k">R$ 37</div>
+        <div class="kl">por venda, com ROAS de 4,9x</div>
+        <p>Achei falhas no cadastro dos produtos no Google que travavam o Shopping. Corrigidas, a Performance Max puxou o resultado.</p>
       </div>
-      <div class="card">
-        <span class="kind">Contas grandes</span>
-        <h3>Duloren, Bana Bana e Jacuzzi</h3>
-        <p class="num">~R$ 1 milhão/mês em mídia</p>
-        <p>Cuidei da estratégia, da divisão de verba entre canais e das apresentações de resultado para os clientes.</p>
+      <div class="cs">
+        <span class="who">Contas grandes</span>
+        <div class="k">R$ 1 mi</div>
+        <div class="kl">por mês em mídia</div>
+        <p>Duloren, Bana Bana e Jacuzzi: estratégia, divisão de verba entre canais e apresentação de resultados.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- AUTOMAÇÕES -->
-  <section id="automacoes">
-    <h2>Automações que eu criei</h2>
-    <p class="intro">Tarefas que alguém fazia na mão (ou esquecia de fazer) e que hoje rodam sozinhas. Para quem quer os detalhes técnicos, cada uma tem uma página no GitHub.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="kind">Controle de verba</span>
-        <h3>Robô que vigia o orçamento</h3>
-        <p><b>Problema:</b> campanhas entravam de surpresa e era fácil gastar além do combinado.</p>
-        <p><b>Solução:</b> todo dia ele soma o que já foi gasto no Meta e no Google, projeta o mês e avisa no Slack.</p>
-        <div class="gain">orçamento sob controle sem ninguém conferir planilha.</div>
+<section id="automacoes" class="auto-band">
+  <div class="wrap">
+    <span class="eyebrow">Automações</span>
+    <h2>Robôs que trabalham enquanto o time dorme.</h2>
+    <p class="intro">Mais de 10 automações que eu mesmo construí rodam todo dia, sozinhas. Algumas delas:</p>
+    <div class="autos">
+      <div class="auto">
+        <h3>Vigia de orçamento</h3>
+        <div class="row"><span>Antes</span>Campanhas entravam de surpresa e era fácil gastar além do combinado.</div>
+        <div class="row"><span>Agora</span>Todo dia soma o gasto no Meta e no Google, projeta o mês e avisa no Slack.</div>
+        <div class="row g"><span>Ganho</span>Orçamento sob controle sem ninguém abrir planilha.</div>
       </div>
-      <div class="card">
-        <span class="kind">Anúncios mais inteligentes</span>
-        <h3>CRM avisa o Meta quem virou cliente</h3>
-        <p><b>Problema:</b> o Meta só sabia que alguém preencheu um formulário, não se o lead era bom.</p>
-        <p><b>Solução:</b> quando o vendedor qualifica ou fecha um negócio no CRM, isso vai direto para o Meta, sem duplicar.</p>
-        <div class="gain">os anúncios passam a buscar gente parecida com quem compra de verdade.</div>
-        <a class="tech" href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/01-crm-para-meta-capi.md">Detalhes técnicos →</a>
+      <div class="auto">
+        <h3>CRM que ensina os anúncios</h3>
+        <div class="row"><span>Antes</span>O Meta só sabia que alguém preencheu um formulário, não se virou cliente.</div>
+        <div class="row"><span>Agora</span>Lead qualificado ou venda no CRM vão direto para o Meta, sem duplicar.</div>
+        <div class="row g"><span>Ganho</span>Os anúncios passam a buscar gente parecida com quem compra.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/01-crm-para-meta-capi.md">Detalhes técnicos →</a>
       </div>
-      <div class="card">
-        <span class="kind">Relatório automático</span>
-        <h3>Diagnóstico semanal do Google Shopping</h3>
-        <p><b>Problema:</b> preço fora do mercado, produto sem estoque e cadastro reprovado só apareciam quando a venda já tinha caído.</p>
-        <p><b>Solução:</b> toda segunda às 8h cada cliente recebe no Slack um resumo do que precisa de atenção.</p>
-        <div class="gain">problemas resolvidos antes de virarem queda de venda.</div>
-        <a class="tech" href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/02-relatorio-merchant-center.md">Detalhes técnicos →</a>
+      <div class="auto">
+        <h3>Raio-x semanal do Google Shopping</h3>
+        <div class="row"><span>Antes</span>Preço fora do mercado e produto reprovado só apareciam quando a venda caía.</div>
+        <div class="row"><span>Agora</span>Toda segunda às 8h cada cliente recebe no Slack o que precisa de atenção.</div>
+        <div class="row g"><span>Ganho</span>Problema resolvido antes de virar queda de venda.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/02-relatorio-merchant-center.md">Detalhes técnicos →</a>
       </div>
-      <div class="card">
-        <span class="kind">Monitoramento</span>
+      <div class="auto">
         <h3>Alertas que só tocam quando importa</h3>
-        <p><b>Problema:</b> conferir ~15 contas todo dia tomava a manhã inteira, e alerta demais ninguém lê.</p>
-        <p><b>Solução:</b> às 7h tudo é verificado. Só chega mensagem se algo precisa de ação: "parar tudo" ou "olhar hoje". Dia normal é silêncio.</p>
-        <div class="gain">a manhã volta a ser para otimizar, não para procurar problema.</div>
-        <a class="tech" href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/03-sistema-de-alertas.md">Detalhes técnicos →</a>
+        <div class="row"><span>Antes</span>Conferir cerca de 15 contas tomava a manhã inteira.</div>
+        <div class="row"><span>Agora</span>Às 7h tudo é verificado; só chega mensagem se precisa de ação. Dia normal é silêncio.</div>
+        <div class="row g"><span>Ganho</span>A manhã volta a ser para otimizar.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/03-sistema-de-alertas.md">Detalhes técnicos →</a>
       </div>
-      <div class="card">
-        <span class="kind">Catálogo</span>
-        <h3>Promoções marcadas sozinhas nos anúncios</h3>
-        <p><b>Problema:</b> a loja tinha produtos em oferta, mas não dava para anunciar só eles.</p>
-        <p><b>Solução:</b> toda madrugada o robô lê a vitrine de ofertas e marca esses produtos no catálogo do Google e do Meta.</p>
-        <div class="gain">campanhas só de promoção, sempre atualizadas.</div>
-        <a class="tech" href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/04-feed-de-ofertas.md">Detalhes técnicos →</a>
+      <div class="auto">
+        <h3>Promoções marcadas sozinhas</h3>
+        <div class="row"><span>Antes</span>Não dava para anunciar só os produtos em oferta.</div>
+        <div class="row"><span>Agora</span>Toda madrugada o robô lê a vitrine de ofertas e marca os produtos no catálogo.</div>
+        <div class="row g"><span>Ganho</span>Campanhas de promoção sempre atualizadas.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/04-feed-de-ofertas.md">Detalhes técnicos →</a>
       </div>
-      <div class="card">
-        <span class="kind">Inteligência artificial</span>
-        <h3>Assistente de IA conectado à loja e ao atendimento</h3>
-        <p><b>Problema:</b> responder dúvidas e consultar pedidos tomava tempo do time.</p>
-        <p><b>Solução:</b> agentes de IA que consultam a loja com segurança (sem acessar dados pessoais) e um assistente de atendimento treinado com as informações da empresa.</p>
-        <div class="gain">respostas rápidas sem expor dados de clientes.</div>
-        <a class="tech" href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/05-mcp-ecommerce-e-leads.md">Detalhes técnicos →</a>
-      </div>
-      <div class="card">
-        <span class="kind">Captação de leads</span>
-        <h3>Lead do Facebook direto no CRM</h3>
-        <p><b>Problema:</b> leads de formulário do Facebook chegavam sem origem e alguém tinha que copiar na mão.</p>
-        <p><b>Solução:</b> cada lead entra no RD Station na hora, com as respostas de qualificação e a campanha de onde veio.</p>
-        <div class="gain">zero digitação e o comercial sabe qual anúncio trouxe cada lead.</div>
-      </div>
-      <div class="card">
-        <span class="kind">Projeto pessoal</span>
-        <h3>Copiloto de busca de vagas</h3>
-        <p><b>Problema:</b> achar vagas boas no meio de centenas de anúncios.</p>
-        <p><b>Solução:</b> a cada 6h ele busca vagas, uma IA dá nota de 0 a 100 conforme meu perfil e salva as melhores numa planilha. Para as aprovadas, adapta o currículo e deixa o e-mail pronto.</p>
-        <div class="gain">só leio as vagas que valem a pena.</div>
+      <div class="auto">
+        <h3>IA no atendimento e na loja</h3>
+        <div class="row"><span>Antes</span>Responder dúvidas e consultar pedidos tomava tempo do time.</div>
+        <div class="row"><span>Agora</span>Assistente treinado com as informações da empresa e agentes que consultam a loja sem acessar dados pessoais.</div>
+        <div class="row g"><span>Ganho</span>Respostas rápidas com segurança.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/05-mcp-ecommerce-e-leads.md">Detalhes técnicos →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRAJETÓRIA -->
-  <section id="trajetoria">
-    <h2>Trajetória</h2>
-    <p class="intro">Promovido 4 vezes em 3 anos, de analista a head de performance.</p>
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Por que eu</span>
+    <h2>O que você ganha trabalhando comigo.</h2>
+    <p class="intro">&nbsp;</p>
+    <div class="why">
+      <div><h3>Penso em lucro, não em métrica bonita</h3><p>Clique e alcance só importam se viram venda. Toda decisão parte de ROAS, CPA e margem.</p></div>
+      <div><h3>Resolvo sem depender de ninguém</h3><p>Se o problema está no tracking, no feed ou num processo manual, eu mesmo conserto. Não fica parado esperando o TI.</p></div>
+      <div><h3>Já liderei e formei gente</h3><p>Liderei 5 especialistas, criei plano de carreira e treinei todos os novos colaboradores de uma agência.</p></div>
+      <div><h3>Testo antes de acreditar</h3><p>Cada mudança importante passa por teste A/B, e o aprendizado fica registrado, mesmo quando o teste não ganha.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Como eu trabalho</span>
+    <h2>Do diagnóstico ao resultado.</h2>
+    <p class="intro">&nbsp;</p>
+    <div class="process">
+      <div><h3>Diagnóstico</h3><p>Auditoria de contas, tracking e catálogo para achar onde a verba está vazando.</p></div>
+      <div><h3>Arrumar a base</h3><p>GA4, feed e estrutura de campanha certos antes de escalar.</p></div>
+      <div><h3>Testar e escalar</h3><p>Testes A/B de público, criativo e oferta; verba para o que ganha.</p></div>
+      <div><h3>Automatizar</h3><p>Relatórios e alertas automáticos para manter o resultado sem retrabalho.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Trajetória</span>
+    <h2>De analista a head em 4 anos.</h2>
+    <p class="intro">&nbsp;</p>
     <ul class="timeline">
-      <li><b>Growth Lead · Softcommerce</b><span>2026 – hoje · Mídia paga, CRO e automação para e-commerces; expansão da agência para Portugal.</span></li>
-      <li><b>Head de Performance · DOT Conceito</b><span>2025 – 2026 · Liderei 5 especialistas com 45 clientes; criei o plano de carreira do time.</span></li>
-      <li><b>Especialista de Performance · Colli &amp; Co (V4 Company)</b><span>2024 – 2025 · Carteira completa de clientes e mentoria técnica para as franquias V4.</span></li>
-      <li><b>Analista → Key Accounts → BI · Peretto &amp; Co (V4 Company)</b><span>2021 – 2024 · Contas de até R$ 1 mi/mês, treinamento de novos colaboradores e dashboards de BI.</span></li>
+      <li><span class="when">2026 – hoje</span><div><b>Growth Lead · Softcommerce</b><span>Mídia paga, CRO e automação para e-commerces; liderando a expansão da agência para Portugal.</span></div></li>
+      <li><span class="when">2025 – 2026</span><div><b>Head de Performance · DOT Conceito</b><span>Time de 5 especialistas com 45 clientes; plano de carreira e case Lebes.</span></div></li>
+      <li><span class="when">2024 – 2025</span><div><b>Especialista de Performance · Colli &amp; Co (V4 Company)</b><span>Carteira completa de clientes e mentoria técnica para as franquias V4.</span></div></li>
+      <li><span class="when">2021 – 2024</span><div><b>Analista → Key Accounts → BI · Peretto &amp; Co (V4 Company)</b><span>Contas de até R$ 1 mi/mês, treinamento de todos os novos colaboradores e dashboards de BI.</span></div></li>
     </ul>
-  </section>
-
-  <section>
-    <h2>Ferramentas</h2>
-    <p class="intro">O que uso no dia a dia.</p>
     <div class="tools">
-      <span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Performance Max</span><span class="chip">Merchant Center</span>
-      <span class="chip">GA4</span><span class="chip">Google Tag Manager</span><span class="chip">Looker Studio</span><span class="chip">Power BI</span>
-      <span class="chip">n8n</span><span class="chip">Make</span><span class="chip">Zapier</span><span class="chip">RD Station</span>
-      <span class="chip">Supabase</span><span class="chip">Slack</span><span class="chip">ChatGPT / Claude</span><span class="chip">Testes A/B e CRO</span>
+      <span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Performance Max</span><span class="chip">Merchant Center</span><span class="chip">GA4</span><span class="chip">GTM</span><span class="chip">Looker Studio</span><span class="chip">Power BI</span><span class="chip">n8n</span><span class="chip">Make</span><span class="chip">RD Station</span><span class="chip">ChatGPT / Claude</span><span class="chip">7 certificações Google</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contato" class="contact">
-    <h2>Vamos conversar?</h2>
-    <p>Aberto a oportunidades em performance, growth e automação, no Brasil, em Portugal ou remoto.</p>
-    <div class="links">
-      <a class="btn primary" href="mailto:jonathanrobertsilveira@gmail.com">jonathanrobertsilveira@gmail.com</a>
-      <a class="btn ghost" href="https://linkedin.com/in/jonathan-robert-71878a221">LinkedIn</a>
+<section id="contato" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Quer esse tipo de resultado no seu time?</h2>
+      <p>Estou aberto a vagas de performance, growth e mídia paga, no Brasil, em Portugal ou remoto. Me chama para uma conversa.</p>
+      <div class="ctas">
+        <a class="btn primary" href="mailto:jonathanrobertsilveira@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">Enviar e-mail</a>
+        <a class="btn ghost" href="https://linkedin.com/in/jonathan-robert-71878a221">LinkedIn</a>
+        <a class="btn ghost" href="cv/Jonathan_Robert_CV_PT.pdf">Baixar currículo</a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>Jonathan Robert · Porto Alegre, Brasil</footer>
-</div>
+<footer>Jonathan Robert · Porto Alegre, Brasil · jonathanrobertsilveira@gmail.com</footer>
 </body>
 </html>
