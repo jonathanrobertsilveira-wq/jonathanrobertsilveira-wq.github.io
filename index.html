@@ -61,6 +61,12 @@
   .roas-legend span { flex: 1; text-align: center; }
   .proof-card .foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--hero-line); font-size: 15px; color: var(--hero-muted); }
   .proof-card .foot b { color: var(--hero-text); }
+  .hero-side { position: relative; padding-bottom: 170px; }
+  .hero-side .me { display: block; width: 82%; max-width: 380px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-left: auto; border-radius: 18px; border: 1px solid var(--hero-line); }
+  .hero-side .proof-card { position: absolute; left: 0; bottom: 0; width: 270px; padding: 18px; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  .hero-side .roas { height: 70px; margin-top: 28px; }
+  .hero-side .roas .bar b { font-size: 15px; top: -22px; }
+  .hero-side .proof-card .foot { margin-top: 12px; padding-top: 12px; font-size: 13px; }
   .logos { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--hero-line); display: flex; align-items: center; gap: 12px 36px; flex-wrap: wrap; color: var(--hero-muted); }
   .logos small { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; width: 100%; }
   .logos b { font-size: 20px; font-weight: 700; color: #d9d2c8; letter-spacing: -.01em; }
@@ -116,10 +122,18 @@
   .auto-band figure a { border-color: var(--hero-line); }
   .auto-band figcaption { color: var(--hero-muted); }
   .auto-band figcaption b { color: var(--hero-text); }
-  .shot-wide { margin-bottom: 28px; }
+  .shots { display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px; align-items: start; margin-bottom: 28px; }
   .lead-proof { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-top: 40px; }
   .lead-proof p { color: var(--muted); margin: 0; }
-  @media (max-width: 860px) { .gallery, .lead-proof { grid-template-columns: 1fr; } }
+  .lead-proof + .lead-proof { margin-top: 48px; }
+  .certs { margin-top: 18px; font-size: 15px; color: var(--muted); }
+  .certs a { color: var(--accent); font-weight: 600; }
+  @media (max-width: 860px) {
+    .gallery, .lead-proof, .shots { grid-template-columns: 1fr; }
+    .hero-side { padding-bottom: 0; }
+    .hero-side .me { width: 100%; max-width: none; aspect-ratio: 1 / 1; object-position: 50% 15%; }
+    .hero-side .proof-card { position: relative; width: auto; margin: -64px 16px 0; }
+  }
 
   /* AUTOMAÇÕES */
   .auto-band { background: var(--hero-bg); color: var(--hero-text); }
@@ -201,8 +215,10 @@
           <a class="btn ghost" href="#resultados">Ver resultados</a>
         </div>
       </div>
+      <div class="hero-side">
+      <img class="me" src="img/jonathan.jpg" alt="Jonathan Robert sorrindo, de terno, ao lado de um notebook" width="900" height="1125">
       <div class="proof-card" aria-label="Evolução do ROAS no case Lebes">
-        <div class="label">ROAS do e-commerce · varejista nacional</div>
+        <div class="label">ROAS do e-commerce · Lebes</div>
         <div class="roas">
           <div class="bar" style="height:57%"><b>8x</b></div>
           <div class="bar" style="height:71%"><b>10x</b></div>
@@ -210,6 +226,7 @@
         </div>
         <div class="roas-legend"><span>Quando assumi</span><span>Catálogo + público</span><span>Teste A/B criativo</span></div>
         <div class="foot"><b>+75% de retorno</b> sobre R$ 110 mil/mês de mídia, acima da meta de 10x.</div>
+      </div>
       </div>
     </div>
 
@@ -323,10 +340,16 @@
     <span class="eyebrow">Automações</span>
     <h2>Robôs que trabalham enquanto o time dorme.</h2>
     <p class="intro">Mais de 10 automações que eu mesmo construí rodam todo dia, sozinhas. Algumas delas:</p>
-    <figure class="shot-wide">
-      <a href="img/robo-verba-make.jpg" target="_blank" rel="noopener"><img src="img/robo-verba-make.jpg" alt="Fluxo de automação no Make: busca o gasto no Meta e no Google, soma, projeta a verba e manda alerta no Slack" loading="lazy" width="1798" height="848"></a>
-      <figcaption><b>Por dentro do vigia de orçamento</b>, construído por mim para a Lebes: busca o gasto no Meta e no Google, compara com o que deveria ter sido gasto até hoje e manda o aviso certo no Slack.</figcaption>
-    </figure>
+    <div class="shots">
+      <figure>
+        <a href="img/robo-verba-make.jpg" target="_blank" rel="noopener"><img src="img/robo-verba-make.jpg" alt="Fluxo de automação no Make: busca o gasto no Meta e no Google, soma, projeta a verba e manda alerta no Slack" loading="lazy" width="1798" height="848"></a>
+        <figcaption><b>Por dentro do vigia de orçamento</b>, construído por mim para a Lebes: busca o gasto no Meta e no Google, compara com o que deveria ter sido gasto até hoje e manda o aviso certo no Slack.</figcaption>
+      </figure>
+      <figure>
+        <a href="img/alerta-verba-slack.png" target="_blank" rel="noopener"><img src="img/alerta-verba-slack.png" alt="Mensagem do robô no Slack: limite do mês de R$ 110 mil, quanto deveria ter sido investido até o momento e quanto foi, no total, nas lojas físicas e no e-commerce" loading="lazy" width="600" height="280"></a>
+        <figcaption><b>O aviso que chega no Slack.</b> Limite do mês, quanto já deveria ter sido gasto e quanto foi, separado entre lojas físicas e e-commerce.</figcaption>
+      </figure>
+    </div>
     <div class="autos">
       <div class="auto">
         <h3>Vigia de orçamento</h3>
@@ -393,6 +416,15 @@
         <p>Na DOT Conceito desenhei os níveis do time de performance, do analista ao head: o que cada um faz, o que não faz e quais certificações levam ao próximo nível. Cada pessoa tinha PDI e 1:1 comigo.</p>
       </div>
     </div>
+    <div class="lead-proof">
+      <div>
+        <h3 style="margin:0 0 8px;font-size:21px">Ensinar faz parte do trabalho</h3>
+        <p>Apresento estratégia para times e clientes desde o começo da carreira. Na Peretto &amp; Co eu treinava todos os novos colaboradores; na Colli &amp; Co dava mentoria técnica para as franquias V4.</p>
+      </div>
+      <figure>
+        <a href="img/palestra-growth-plan.jpg" target="_blank" rel="noopener"><img src="img/palestra-growth-plan.jpg" alt="Jonathan apresentando um Growth Plan para uma plateia" loading="lazy" width="1400" height="933"></a>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -424,6 +456,7 @@
     <div class="tools">
       <span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">Performance Max</span><span class="chip">Merchant Center</span><span class="chip">GA4</span><span class="chip">GTM</span><span class="chip">Looker Studio</span><span class="chip">Power BI</span><span class="chip">n8n</span><span class="chip">Make</span><span class="chip">RD Station</span><span class="chip">ChatGPT / Claude</span><span class="chip">7 certificações Google</span>
     </div>
+    <p class="certs">Certificados RD Station (2026): <a href="cv/certificado-rd-station-marketing.pdf" target="_blank" rel="noopener">Marketing na Prática</a> · <a href="cv/certificado-rd-station-crm.pdf" target="_blank" rel="noopener">CRM na Prática para Parceiros</a></p>
   </div>
 </section>
 
