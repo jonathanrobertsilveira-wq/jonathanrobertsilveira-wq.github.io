@@ -105,6 +105,22 @@
   .cs .kl { font-weight: 600; margin-bottom: 10px; }
   .cs p { color: var(--muted); font-size: 15px; margin: 0; }
 
+  /* IMAGENS */
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  figure { margin: 0; }
+  figure a { display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #1d1915; transition: transform .2s; }
+  figure a:hover { transform: translateY(-2px); }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+  figcaption b { color: var(--text); }
+  .auto-band figure a { border-color: var(--hero-line); }
+  .auto-band figcaption { color: var(--hero-muted); }
+  .auto-band figcaption b { color: var(--hero-text); }
+  .shot-wide { margin-bottom: 28px; }
+  .lead-proof { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; margin-top: 40px; }
+  .lead-proof p { color: var(--muted); margin: 0; }
+  @media (max-width: 860px) { .gallery, .lead-proof { grid-template-columns: 1fr; } }
+
   /* AUTOMAÇÕES */
   .auto-band { background: var(--hero-bg); color: var(--hero-text); }
   .auto-band .intro { color: var(--hero-muted); }
@@ -268,6 +284,17 @@
       </div>
     </article>
 
+    <div class="gallery">
+      <figure>
+        <a href="img/lebes-dashboard-meta.jpg" target="_blank" rel="noopener"><img src="img/lebes-dashboard-meta.jpg" alt="Dashboard de Meta Ads da Lebes: 1,7 milhão de pessoas alcançadas, 4,7 milhões de impressões, CPC de R$ 0,17" loading="lazy" width="1053" height="729"></a>
+        <figcaption><b>Dashboard de Meta Ads que montei para a Lebes.</b> 1,7 mi de pessoas alcançadas em uma semana, com clique a R$ 0,17.</figcaption>
+      </figure>
+      <figure>
+        <a href="img/lebes-dashboard-google.jpg" target="_blank" rel="noopener"><img src="img/lebes-dashboard-google.jpg" alt="Dashboard de Google Ads da Lebes: 38 mil cliques, CTR de 2,3%, CPC de R$ 0,20, resultado por cidade e por campanha" loading="lazy" width="1095" height="733"></a>
+        <figcaption><b>Dashboard de Google Ads.</b> 38 mil cliques a R$ 0,20, com resultado aberto por cidade e por campanha.</figcaption>
+      </figure>
+    </div>
+
     <div class="cases-small">
       <div class="cs">
         <span class="who">E-commerce de móveis</span>
@@ -296,6 +323,10 @@
     <span class="eyebrow">Automações</span>
     <h2>Robôs que trabalham enquanto o time dorme.</h2>
     <p class="intro">Mais de 10 automações que eu mesmo construí rodam todo dia, sozinhas. Algumas delas:</p>
+    <figure class="shot-wide">
+      <a href="img/robo-verba-make.jpg" target="_blank" rel="noopener"><img src="img/robo-verba-make.jpg" alt="Fluxo de automação no Make: busca o gasto no Meta e no Google, soma, projeta a verba e manda alerta no Slack" loading="lazy" width="1798" height="848"></a>
+      <figcaption><b>Por dentro do vigia de orçamento</b>, construído por mim para a Lebes: busca o gasto no Meta e no Google, compara com o que deveria ter sido gasto até hoje e manda o aviso certo no Slack.</figcaption>
+    </figure>
     <div class="autos">
       <div class="auto">
         <h3>Vigia de orçamento</h3>
@@ -352,6 +383,15 @@
       <div><h3>Resolvo sem depender de ninguém</h3><p>Se o problema está no tracking, no feed ou num processo manual, eu mesmo conserto. Não fica parado esperando o TI.</p></div>
       <div><h3>Já liderei e formei gente</h3><p>Liderei 5 especialistas, criei plano de carreira e treinei todos os novos colaboradores de uma agência.</p></div>
       <div><h3>Testo antes de acreditar</h3><p>Cada mudança importante passa por teste A/B, e o aprendizado fica registrado, mesmo quando o teste não ganha.</p></div>
+    </div>
+    <div class="lead-proof">
+      <figure>
+        <a href="img/plano-carreira-head.png" target="_blank" rel="noopener"><img src="img/plano-carreira-head.png" alt="Slide do plano de carreira: função principal e responsabilidades do Head de Performance" loading="lazy" width="1107" height="619"></a>
+      </figure>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:21px">Plano de carreira que eu criei</h3>
+        <p>Na DOT Conceito desenhei os níveis do time de performance, do analista ao head: o que cada um faz, o que não faz e quais certificações levam ao próximo nível. Cada pessoa tinha PDI e 1:1 comigo.</p>
+      </div>
     </div>
   </div>
 </section>
