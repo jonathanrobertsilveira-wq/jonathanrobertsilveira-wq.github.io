@@ -87,7 +87,8 @@
   .pillar li { padding: 5px 0 5px 24px; position: relative; }
   .pillar li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 700; }
   .pillar { display: flex; flex-direction: column; }
-  .pillar p.pain { font-size: 18px; font-style: italic; color: var(--text); }
+  .pillar p.pain { position: relative; background: var(--accent-soft); border-radius: 12px 12px 12px 2px; padding: 10px 14px; font-size: 16px; font-style: italic; color: var(--text); }
+  .pillar p.pain small { display: block; font-style: normal; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
   .pillar ul { margin-bottom: 18px; }
   .pillar p.proof { margin: auto 0 0; padding-top: 14px; border-top: 1px solid var(--line); color: var(--good); font-weight: 600; font-size: 15px; }
 
@@ -259,21 +260,21 @@
       <div class="pillar">
         <div class="ic">📈</div>
         <h3>Mídia que vende</h3>
-        <p class="pain">"Gasto muito e vendo pouco."</p>
+        <p class="pain"><small>Para quem diz</small>“Gasto muito e vendo pouco.”</p>
         <ul><li>Shopping, Performance Max e catálogo</li><li>Públicos a partir de quem realmente compra</li><li>Testes A/B de criativo e oferta</li></ul>
         <p class="proof">Lebes: ROAS 8x → 14x</p>
       </div>
       <div class="pillar">
         <div class="ic">🔍</div>
         <h3>Dados em que dá para confiar</h3>
-        <p class="pain">"Não sei de onde vem a venda."</p>
+        <p class="pain"><small>Para quem diz</small>“Não sei de onde vem a venda.”</p>
         <ul><li>GA4 e GTM auditados</li><li>Feed e Merchant Center sem erro</li><li>Dashboards em Looker Studio e Power BI</li></ul>
         <p class="proof">GA4 e feed auditados antes de mexer na verba</p>
       </div>
       <div class="pillar">
         <div class="ic">⚙️</div>
         <h3>Automação que libera o time</h3>
-        <p class="pain">"Meu time vive em planilha."</p>
+        <p class="pain"><small>Para quem diz</small>“Meu time vive em planilha.”</p>
         <ul><li>Controle de verba e alertas no Slack</li><li>CRM conectado aos anúncios</li><li>Agentes de IA para atendimento</li></ul>
         <p class="proof">Mais de 10 robôs rodando todo dia</p>
       </div>
