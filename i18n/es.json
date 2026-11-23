@@ -504,8 +504,8 @@
     "El presupuesto deja de perderse en búsquedas equivocadas."
   ],
   [
-    "Ver mais 4 automações",
-    "Ver 4 automatizaciones más"
+    "Ver mais 5 automações",
+    "Ver 5 automatizaciones más"
   ],
   [
     "<h3>Auditoria de configuração</h3>",
@@ -732,6 +732,10 @@
     "oct. 2026 · Verificar →"
   ],
   [
+    "nov/2026 · Verificar →",
+    "nov. 2026 · Verificar →"
+  ],
+  [
     "set/2026 · Verificar →",
     "sept. 2026 · Verificar →"
   ],
@@ -758,5 +762,21 @@
   [
     "cv/Jonathan_Robert_CV_PT.pdf\">Baixar currículo",
     "cv/Jonathan_Robert_CV_ES.pdf\">Descargar CV"
+  ],
+  [
+    "<h3>Copiloto de candidaturas</h3>",
+    "<h3>Copiloto de candidaturas</h3>"
+  ],
+  [
+    "Procurar vaga, adaptar o CV e anotar cada envio tomava horas toda semana.",
+    "Buscar ofertas, adaptar el CV y anotar cada envío llevaba horas cada semana."
+  ],
+  [
+    "Meu n8n busca vagas, dá nota com IA, adapta o CV e registra tudo num funil, dentro do plano grátis.",
+    "Mi n8n busca ofertas, las puntúa con IA, adapta el CV y lo registra todo en un embudo, dentro de planes gratuitos."
+  ],
+  [
+    "O esforço vai para onde o funil mostra resposta.",
+    "El esfuerzo va a donde el embudo muestra respuesta."
   ]
 ]

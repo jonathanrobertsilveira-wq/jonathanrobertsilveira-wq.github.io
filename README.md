@@ -11,5 +11,6 @@ Automações que construí e mantenho em produção para e-commerces e para o fu
 | 03 | [Sistema de alertas de campanhas](automacoes/03-sistema-de-alertas.md) | Agendado · com estado |
 | 04 | [Feed complementar de ofertas](automacoes/04-feed-de-ofertas.md) | Agendado · catálogo |
 | 05 | [MCP para e-commerce + captação de leads](automacoes/05-mcp-ecommerce-e-leads.md) | IA · integração |
+| 06 | [Copiloto de candidaturas](automacoes/06-copiloto-de-candidaturas.md) | IA · n8n self-hosted · plano grátis |
 
 **Padrões que uso em todos:** workflow de erro global com aviso no Slack, idempotência em banco, modo ensaio antes de publicar, nada de dado pessoal sem hash.

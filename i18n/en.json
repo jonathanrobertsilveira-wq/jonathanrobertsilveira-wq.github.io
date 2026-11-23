@@ -504,8 +504,8 @@
     "Budget stops leaking into the wrong searches."
   ],
   [
-    "Ver mais 4 automações",
-    "See 4 more automations"
+    "Ver mais 5 automações",
+    "Show 5 more automations"
   ],
   [
     "<h3>Auditoria de configuração</h3>",
@@ -732,6 +732,10 @@
     "Oct 2026 · Verify →"
   ],
   [
+    "nov/2026 · Verificar →",
+    "Nov 2026 · Verify →"
+  ],
+  [
     "set/2026 · Verificar →",
     "Sep 2026 · Verify →"
   ],
@@ -762,5 +766,21 @@
   [
     "Porto Alegre, Brasil ·",
     "Porto Alegre, Brazil ·"
+  ],
+  [
+    "<h3>Copiloto de candidaturas</h3>",
+    "<h3>Job-application copilot</h3>"
+  ],
+  [
+    "Procurar vaga, adaptar o CV e anotar cada envio tomava horas toda semana.",
+    "Finding jobs, tailoring the CV and logging each application took hours every week."
+  ],
+  [
+    "Meu n8n busca vagas, dá nota com IA, adapta o CV e registra tudo num funil, dentro do plano grátis.",
+    "My n8n finds jobs, scores them with AI, tailors the CV and logs everything in a funnel, all on free plans."
+  ],
+  [
+    "O esforço vai para onde o funil mostra resposta.",
+    "Effort goes where the funnel shows replies."
   ]
 ]

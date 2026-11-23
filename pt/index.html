@@ -171,6 +171,7 @@
   .cert .org { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
   .cert .org.g { color: #4285f4; }
   .cert .org.rd { color: #19b6c9; }
+  .cert .org.hs { color: #ff5c35; }
   .cert b { font-size: 15px; line-height: 1.3; }
   .cert small { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--accent); font-weight: 600; }
   @media (max-width: 860px) {
@@ -238,7 +239,7 @@
     .numbers { grid-template-columns: repeat(2, 1fr); }
     .numbers div:last-child { grid-column: 1 / -1; }
     .cert-grid { grid-template-columns: repeat(2, 1fr); }
-    .cert-grid .cert:last-child { grid-column: 1 / -1; }
+    .cert-grid .cert:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .pillars, .cases-small, .autos, .why, .brain { grid-template-columns: 1fr; }
     .brain-side, .brain-body { padding: 24px; }
     .process { grid-template-columns: repeat(2, 1fr); }
@@ -551,7 +552,7 @@
       </div>
     </div>
     <details class="more-autos">
-      <summary>Ver mais 4 automações</summary>
+      <summary>Ver mais 5 automações</summary>
       <div class="autos">
       <div class="auto">
         <h3>Auditoria de configuração</h3>
@@ -576,6 +577,13 @@
         <div class="row"><span>Antes</span>Montar dezenas de grupos e anúncios era clique a clique.</div>
         <div class="row"><span>Agora</span>Monto a estrutura num ficheiro e o robô cria tudo no Google e no Meta, pausado, com antes e depois.</div>
         <div class="row g"><span>Ganho</span>Estrutura pronta sem erros de escrita.</div>
+      </div>
+      <div class="auto">
+        <h3>Copiloto de candidaturas</h3>
+        <div class="row"><span>Antes</span>Procurar vagas, adaptar o CV e registar cada envio levava horas todas as semanas.</div>
+        <div class="row"><span>Agora</span>O meu n8n procura vagas, dá nota com IA, adapta o CV e regista tudo num funil, em planos gratuitos.</div>
+        <div class="row g"><span>Ganho</span>O esforço vai para onde o funil mostra resposta.</div>
+        <a href="https://github.com/jonathanrobertsilveira-wq/jonathanrobertsilveira-wq.github.io/blob/main/automacoes/06-copiloto-de-candidaturas.md">Detalhes técnicos →</a>
       </div>
       </div>
     </details>
@@ -651,6 +659,7 @@
       <a class="cert" href="https://skillshop.credential.net/e47a8e23-9de4-40fd-bdbd-443f606faed8" target="_blank" rel="noopener"><span class="org g">Google</span><b>Otimização de conversão</b><small>out/2026 · Verificar →</small></a>
       <a class="cert" href="../cv/certificado-rd-station-marketing.pdf" target="_blank" rel="noopener"><span class="org rd">RD Station</span><b>Marketing na Prática</b><small>mar/2026 · Ver certificado →</small></a>
       <a class="cert" href="../cv/certificado-rd-station-crm.pdf" target="_blank" rel="noopener"><span class="org rd">RD Station</span><b>CRM na Prática para Parceiros</b><small>mar/2026 · Ver certificado →</small></a>
+      <a class="cert" href="https://app.hubspot.com/academy/achievements/b1m0gk91/en/1/jonathan-robert/digital-marketing-certified" target="_blank" rel="noopener"><span class="org hs">HubSpot Academy</span><b>Digital Marketing Certified</b><small>nov/2026 · Verificar →</small></a>
     </div>
   </div>
 </section>

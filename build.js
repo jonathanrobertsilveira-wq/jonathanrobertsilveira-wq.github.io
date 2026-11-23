@@ -20,7 +20,7 @@ const visible = src.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g
 const keep = new Set(['Jonathan Robert', 'Lebes', 'Duloren', 'Bana Bana', 'Jacuzzi', 'V4 Company', 'Google Ads', 'Meta Ads',
   'Performance Max', 'Merchant Center', 'Looker Studio', 'Power BI', 'RD Station', 'ChatGPT / Claude', 'Claude Code', 'Python',
   'Supabase', 'GitHub Actions', 'Google', 'Make', 'Display', 'LinkedIn', 'Growth Lead · Softcommerce', 'Lebes: ROAS 8x → 14x',
-  'Google Analytics (GA4)', 'jonathanrobertsilveira@gmail.com']);
+  'Google Analytics (GA4)', 'HubSpot Academy', 'Digital Marketing Certified', 'jonathanrobertsilveira@gmail.com']);
 
 let failed = false;
 for (const l of langs) {
